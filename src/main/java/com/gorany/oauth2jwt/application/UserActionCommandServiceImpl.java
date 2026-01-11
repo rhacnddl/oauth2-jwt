@@ -18,13 +18,11 @@ public class UserActionCommandServiceImpl implements UserActionCommandService {
 
     @Override
     public void logLoginSuccess(UserActionCreateCommand.LoginSuccess command) {
-        log.info("B2B Admin Login 요청됨. 요청자 command: {}", command);
         logUserAction(command);
     }
 
     @Override
     public void logLogout(UserActionCreateCommand.Logout command) {
-        log.info("B2B Admin Logout 요청됨. 요청자 command: {}", command);
         logUserAction(command);
     }
 

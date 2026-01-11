@@ -86,8 +86,6 @@ public class AdminOauth2ServiceImpl implements AdminOauth2Service {
 
         validateSpotAccess(payload, path);
 
-        log.info("Authorization success: role={}, method={}, path={}", payload.role(), method.name(), path);
-
         return payload;
     }
 
@@ -144,9 +142,6 @@ public class AdminOauth2ServiceImpl implements AdminOauth2Service {
         PathVariableExtractor.extractSpotId(path)
                              .ifPresent(spotId -> {
                                  if (!payload.authorizedSpots().contains(spotId)) {
-                                     log.warn("Unauthorized spot access: userId={}, spotId={}, authorizedSpots={}, path={}",
-                                              payload.userId(), spotId, payload.authorizedSpots(), path);
-
                                      throw new ForbiddenException();
                                  }
                              });

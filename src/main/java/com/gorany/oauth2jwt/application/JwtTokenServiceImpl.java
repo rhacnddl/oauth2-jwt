@@ -7,12 +7,10 @@ import com.gorany.oauth2jwt.authorization.JwtTokenProvider;
 import com.gorany.oauth2jwt.common.utils.TokenUtils;
 import com.gorany.oauth2jwt.exception.JwtExpiredException;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
 public class JwtTokenServiceImpl implements JwtTokenService {
